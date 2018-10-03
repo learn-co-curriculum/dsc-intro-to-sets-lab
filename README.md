@@ -14,7 +14,6 @@ By the end of this lab, you will:
 - know how to perform common set operations in Python 
 - Learn how to use Venn Diagrams to understand about the relationships between sets
 
-
 ## Exploring set operations using a Venn Diagram
 
 Let's start with a pretty conceptual example. Let's consider the following sets:
@@ -46,28 +45,28 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 
 ```python
 # Create set A
-A = None
+A = set([2,4,6,8,10])
 'Type A: {}, A: {}'.format(type(A), A)
 ```
 
 
 ```python
 # Create set B
-B = None
+B = set([3,8,11,12])
 'Type B: {}, B: {}'.format(type(B), B)
 ```
 
 
 ```python
 # Create set C
-C = None
+C = set([2,3,6,8,9,11])
 'Type C: {}, C: {}'.format(type(C), C)
 ```
 
 
 ```python
 # Create universal set U
-U = None
+U = set([1,2,3,4,5,6,7,8,9,10,11,12])
 'Type U: {}, U: {}'.format(type(U), U)
 ```
 
@@ -86,7 +85,7 @@ Now, verify your answers in section 1 by using the correct methods in Python. To
 
 
 ```python
-A_inters_B =  None
+A_inters_B =  A & B
 A_inters_B
 ```
 
@@ -94,7 +93,7 @@ A_inters_B
 
 
 ```python
-A_union_C = None
+A_union_C = A | C
 A_union_C
 ```
 
@@ -102,20 +101,23 @@ A_union_C
 
 
 ```python
-A_comp = None # or A_comp = U-A
+A_comp = U.difference(A) # or A_comp = U-A
 A_comp
 ```
 
 #### 4.  $(A \cup B)^c $
 
+
+```python
 A_union_B_comp = U - (A | B) 
 A_union_B_comp
+```
 
 #### 5. $B \cap C' $
 
 
 ```python
-B_inters_C_comp = None
+B_inters_C_comp = B & (U-C)
 B_inters_C_comp
 ```
 
@@ -123,7 +125,7 @@ B_inters_C_comp
 
 
 ```python
-A_min_B = None
+A_min_B = A-B
 A_min_B
 ```
 
@@ -131,7 +133,7 @@ A_min_B
 
 
 ```python
-C_min_B_min_A= None
+C_min_B_min_A= C-(B-A)
 C_min_B_min_A
 ```
 
@@ -139,29 +141,47 @@ C_min_B_min_A
 
 
 ```python
-C_inters_A_union_C_min_B= None
+C_inters_A_union_C_min_B= (C&A)|(C-B)
 C_inters_A_union_C_min_B
 ```
 
-## The Inclusion Exclustion Principle
+## Exploring set operations using a Venn Diagram: solution for parts a. and b. 
+
+a. 
+
+![title](venn_diagr_comp.png)
+
+b. 
+
+- $ A \cap B = \{8\}$
+- $ A \cup C = \{2,3,4,6,8,9,10, 11\}$
+- $A^c = \{1,3,5,8,7,9,11,12\}$
+- $(A \cup B)^c = \{1,5,7,9\} $
+- $B \cap C' = \{12\}$
+- $A\backslash B = \{2,4,6,10\}$
+- $C \backslash (B \backslash A) =\{2,6,8,9\} $
+- $(C \cap A) \cup (C \backslash B) = \{2,6,8,9\}$
+
+
+## The Inclusion Exclusion Principle
 
 Use A, B and C from exercise one to verify the inclusion exclusion principle in Python. What you'll do is translate the left hand side of the equation for the inclusion principle in the object `left_hand_eq`, and the right hand side in the object `right_hand_eq` and see if the results are the same.
 
 
 ```python
-left_hand_eq = None
+left_hand_eq = len(A | B | C)
 print(left_hand_eq)  # 9
 ```
 
 
 ```python
-right_hand_eq = None
+right_hand_eq = len(A)+len(B)+len(C)- len(A&B)-len(A&C)-len(B&C)+len(A&B&C)
 print(right_hand_eq) # 9
 ```
 
 
 ```python
-None # needs to say "True"
+left_hand_eq == right_hand_eq # needs to say "True"
 ```
 
 ## Set Operations in Python
@@ -193,7 +213,7 @@ Sadly, Eve's turtle passed away last week. Let's update her pet list accordingly
 
 
 ```python
-None
+Eve.remove("Turtle")
 Eve # should be {'Rabbit', 'Goldfish'}
 ```
 
@@ -201,7 +221,7 @@ This time around, Nina promised to take care of Mary's pets while she's awat. bu
 
 
 ```python
-None
+Nina.update(Mary)
 Nina # {'Chicken', 'Horse', 'Chinchilla', 'Parrot', 'Rabbit', 'Donkey', 'Dog', 'Cat', 'Goldfish'}
 ```
 
@@ -209,7 +229,7 @@ Mary, on the other hand, wants to clear her list altogether while away:
 
 
 ```python
-None
+Mary.clear()
 Mary  # set()
 ```
 
@@ -217,7 +237,7 @@ Look at how many species Nina is taking care of right now.
 
 
 ```python
-None
+n_species_Nina = len(Nina)
 n_species_Nina # 9
 ```
 
@@ -225,7 +245,7 @@ Taking care of this many pets is weighing heavy on Nina. She remembered Eve had 
 
 
 ```python
-None
+Nina.difference_update(Eve)
 Nina # 7
 ```
 
@@ -251,9 +271,34 @@ e. Write down the interpretation and give all possible outcomes for the sets den
  - II. $C \cap D$, 
  - III. $C \cup D$. 
 
-## Optional exercise: European Countries
+## Writing down the elements in a set: solution
 
-Use set operations to determine which European countries are not in the European Union. You just might have to clean the data first with pandas.
+a. Solution: $A = \{(L,L,L); (S,S,S); (R,R,R)\}$
+
+b. Solution: $B = \{(L,R,S); (L,S,R); (R,L,S); (R,S,L); (S,L,R); (S,R,L)\}$
+
+
+
+c. Solution: $C= \{(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S)\}$
+
+
+d. Solution: $D = \{(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S);\\
+                          (L,S,S); (S,L,S); (S,S,L); (R,S,S); (S,R,S); (S,S,R); \\
+                          (S,L,L); (L,S,L); (L,L,S); (R,L,L); (L,R,L); (L,L,R)\}$
+
+e. 
+
+I. $D'$: all cars go in a different direction, or all go in the same direction.
+    $D' = \{(L,R,S); (L,S,R); (R,L,S); (R,S,L); (S,L,R); (S,R,L); (L,L,L); (S,S,S); (R,R,R)\}$
+             
+II. The intersection between 2 cars go right, and 2 cars go in the same direction. As C is a subset of D, this boils down to C again, so $C \cap D = C = \{(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S)\} $
+                  
+III. The union between 2 cars go right, and 2 cars go in the same direction. So the set we end up with is the set of 2 cars going in the same direction, which boils down to D again.
+$C \cup D = D = \{(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S);\\
+                 (L,S,S); (S,L,S); (S,S,L); (R,S,S); (S,R,S); (S,S,R);\\
+                 (S,L,L); (L,S,L); (L,L,S); (R,L,L); (L,R,L); (L,L,R)\}$
+
+## Optional exercise: European Countries
 
 
 ```python
@@ -263,9 +308,9 @@ import pandas as pd
 europe = pd.read_excel('Europe_and_EU.xlsx', sheet_name = 'Europe') 
 eu = pd.read_excel('Europe_and_EU.xlsx', sheet_name = 'EU')
 
-#Use pandas to remove any whitespace from names
-None
-None 
+#Remove any whitespace from names
+europe.Country = europe.Country.map(lambda x: x.strip()) 
+eu.Country = eu.Country.map(lambda x: x.strip()) #Remove any whitespace from names
 ```
 
 
@@ -280,18 +325,19 @@ eu.head(3)
 
 
 ```python
-None
+set(eu.Country) < set(europe.Country)
 ```
 
 
 ```python
-None
+set(europe.Country) - set(eu.Country)
 ```
 
 ## Summary
 
-In this lab, you practiced your knowledge on sets, such as common set operations, the use of Venn Diagrams, the inclusion exclusion principle, and how to use sets in Python! 
 
-## sources
+In this lab, you practiced your knowledge on sets, such as common set operations, the use of Venn Diagrams, the inclusion exclusion principle, and how to use sets in Python!
+
+# sources
 
 https://en.wikibooks.org/wiki/Discrete_Mathematics/Set_theory/Exercises
