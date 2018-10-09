@@ -1,5 +1,5 @@
 
-# Exercises on sets
+# Introduction to Sets - Lab
 
 ## Introduction
 
@@ -9,9 +9,10 @@ As mentioned in the lesson before, a good understanding of probability starts wi
 
 ## Objectives
 
-By the end of this lab, you will:
-- have a better sense of what sets, universal sets, and subsets are
-- know how to perform common set operations in Python 
+You will be able to:
+
+- Have a better sense of what sets, universal sets, and subsets are
+- Know how to perform common set operations in Python 
 - Learn how to use Venn Diagrams to understand about the relationships between sets
 
 
@@ -291,7 +292,3 @@ None
 ## Summary
 
 In this lab, you practiced your knowledge on sets, such as common set operations, the use of Venn Diagrams, the inclusion exclusion principle, and how to use sets in Python! 
-
-## sources
-
-https://en.wikibooks.org/wiki/Discrete_Mathematics/Set_theory/Exercises
