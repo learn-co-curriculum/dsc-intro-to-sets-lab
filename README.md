@@ -28,7 +28,7 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 
 #### a. Illustrate all the sets in a Venn Diagram like the one below. The rectangular shape represents the universal set.
 
-![title](venn_diagr.png)
+![title](images/venn_diagr.png)
 
 #### b. Using your Venn Diagram, list the elements in each of the following sets:
 
