@@ -1,5 +1,5 @@
 
-# Exercises on sets
+# Introduction to Sets - Lab
 
 ## Introduction
 
@@ -27,7 +27,7 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 
 #### a. Illustrate all the sets in a Venn Diagram like the one below. The rectangular shape represents the universal set.
 
-![title](venn_diagr.png)
+![title](images/venn_diagr.png)
 
 #### b. Using your Venn Diagram, list the elements in each of the following sets:
 
@@ -41,7 +41,7 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 - $C \backslash (B \backslash A)$ 
 - $(C \cap A) \cup (C \backslash B)$
         
-#### c. As seen in the lecture, you can easily create sets in Python as well. For the remainder of this exercise, let's  create sets A, B and C and universal set U in Python and test out the results you came up with.
+#### c. As seen in the lecture, you can easily create sets in Python as well. For the remainder of this exercise, let's create sets A, B and C and universal set U in Python and test out the results you came up with.
 
 
 ```python
@@ -126,16 +126,16 @@ B_inters_C_comp
 
 
 ```python
-A_min_B = A-B
-A_min_B
+compl_of_B = A-B
+compl_of_B
 ```
 
 #### 7. $C \backslash (B \backslash A) $
 
 
 ```python
-C_min_B_min_A= C-(B-A)
-C_min_B_min_A
+C_compl_B_compl_A= C-(B-A)
+C_compl_B_comp_A
 ```
 
 #### 8.  $(C \cap A) \cup (C \backslash B)$
@@ -150,7 +150,7 @@ C_inters_A_union_C_min_B
 
 a. 
 
-![title](venn_diagr_comp.png)
+![title](images/venn_diagr_comp.png)
 
 b. 
 
@@ -166,7 +166,23 @@ b.
 
 ## The Inclusion Exclusion Principle
 
-Use A, B and C from exercise one to verify the inclusion exclusion principle in Python. What you'll do is translate the left hand side of the equation for the inclusion principle in the object `left_hand_eq`, and the right hand side in the object `right_hand_eq` and see if the results are the same.
+Use A, B and C from exercise one to verify the inclusion exclusion principle in Python. 
+You can use the sets A, B and C as used in the previous exercise. 
+
+Recall from the previous lessen that:
+
+$$\mid A \cup B\cup C\mid = \mid A \mid + \mid B \mid + \mid C \mid - \mid A \cap B \mid  -\mid A \cap C \mid - \mid B \cap C \mid  + \mid A \cap B \cap C \mid $$
+
+combining these main commands:
+
+| Method        |	Equivalent |	Result |
+| ------                    | ------       | ------    |
+| a.union(b)                |	A $\mid$ B | new set with elements from both a and b
+| a.intersection(b)         |	A & B      | new set with elements common to a and b
+
+along with the `len(x)` function to get to the cardinality of a given x ("|x|").
+
+What you'll do is translate the left hand side of the equation for the inclusion principle in the object `left_hand_eq`, and the right hand side in the object `right_hand_eq` and see if the results are the same.
 
 
 ```python
@@ -252,11 +268,14 @@ Nina # 7
 
 Taking care of 7 species seems doable for Nina!
 
-## Writing down the elements in a set
+## Writing Down the Elements in a Set
 
 
 Mary dropped off her Pet's at Nina's house, and finally made her way to the highway. Awesome, her vacation has begun!
 She's approaching an exit. At the end of this particular highway exit, cars can either turn left (L), go straight (S) or turn right (R). It's pretty busy and there are two cars driving close to her. What we'll do now is create several sets. You won't be using Python here, it's sufficient to write the sets down on paper. A good notion of sets and subsets will help you calculate probabilities in the next lab!
+
+Note: each set of action is what _all three cars_ are doing at any given time
+
 
 a. Create a set $A$ of all possible outcomes assuming that all three cars drive in the same direction.
            
@@ -299,7 +318,9 @@ $C \cup D = D = \{(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S);\\
                  (L,S,S); (S,L,S); (S,S,L); (R,S,S); (S,R,S); (S,S,R);\\
                  (S,L,L); (L,S,L); (L,L,S); (R,L,L); (L,R,L); (L,L,R)\}$
 
-## Optional exercise: European Countries
+## Optional Exercise: European Countries
+
+Use set operations to determine which European countries are not in the European Union. You just might have to clean the data first with pandas.
 
 
 ```python
