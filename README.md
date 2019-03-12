@@ -150,7 +150,7 @@ C_inters_A_union_C_min_B
 
 a. 
 
-![title](images/venn_diagr_comp.png)
+![](images/venn_diagr_comp.png)
 
 b. 
 
