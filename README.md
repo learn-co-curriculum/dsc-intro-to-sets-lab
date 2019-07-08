@@ -42,34 +42,34 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 - $C \backslash (B \backslash A)$ 
 - $(C \cap A) \cup (C \backslash B)$
         
-#### c. As seen in the lecture, you can easily create sets in Python as well. For the remainder of this exercise, let's  create sets A, B and C and universal set U in Python and test out the results you came up with.
+#### c. For the remainder of this exercise, let's  create sets A, B and C and universal set U in Python and test out the results you came up with. Sets are easy to create in Python. For a guide to the syntax, follow some of the documentation [here](https://www.w3schools.com/python/python_sets.asp)
 
 
 ```python
 # Create set A
 A = None
-'Type A: {}, A: {}'.format(type(A), A)
+'Type A: {}, A: {}'.format(type(A), A) # "Type A: <class 'set'>, A: {2, 4, 6, 8, 10}"
 ```
 
 
 ```python
 # Create set B
 B = None
-'Type B: {}, B: {}'.format(type(B), B)
+'Type B: {}, B: {}'.format(type(B), B) # "Type B: <class 'set'>, B: {8, 11, 3, 12}"
 ```
 
 
 ```python
 # Create set C
 C = None
-'Type C: {}, C: {}'.format(type(C), C)
+'Type C: {}, C: {}'.format(type(C), C) # "Type C: <class 'set'>, C: {2, 3, 6, 8, 9, 11}"
 ```
 
 
 ```python
 # Create universal set U
 U = None
-'Type U: {}, U: {}'.format(type(U), U)
+'Type U: {}, U: {}'.format(type(U), U) # "Type U: <class 'set'>, U: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}"
 ```
 
 Now, verify your answers in section 1 by using the correct methods in Python. To provide a little bit of help, you can find a table with common operations on sets below.
@@ -88,7 +88,7 @@ Now, verify your answers in section 1 by using the correct methods in Python. To
 
 ```python
 A_inters_B =  None
-A_inters_B
+A_inters_B # {8}
 ```
 
 #### 2. $ A \cup C $
@@ -96,15 +96,15 @@ A_inters_B
 
 ```python
 A_union_C = None
-A_union_C
+A_union_C # {2, 3, 4, 6, 8, 9, 10, 11}
 ```
 
 #### 3.  $A^c$ (you'll have to be a little creative here!)
 
 
 ```python
-A_comp = None 
-A_comp
+A_comp = None
+A_comp # {1, 3, 5, 7, 9, 11, 12}
 ```
 
 #### 4.  $(A \cup B)^c $
@@ -112,7 +112,7 @@ A_comp
 
 ```python
 A_union_B_comp = None
-A_union_B_comp
+A_union_B_comp # {1, 5, 7, 9}
 ```
 
 #### 5. $B \cap C' $
@@ -120,7 +120,7 @@ A_union_B_comp
 
 ```python
 B_inters_C_comp = None
-B_inters_C_comp
+B_inters_C_comp # {12}
 ```
 
 #### 6. $A\backslash B$
@@ -128,7 +128,7 @@ B_inters_C_comp
 
 ```python
 compl_of_B = None
-compl_of_B
+compl_of_B # {2, 4, 6, 10}
 ```
 
 #### 7. $C \backslash (B \backslash A) $
@@ -136,7 +136,7 @@ compl_of_B
 
 ```python
 C_compl_B_compl_A = None
-C_compl_B_compl_A 
+C_compl_B_compl_A # {2, 6, 8, 9}
 ```
 
 #### 8.  $(C \cap A) \cup (C \backslash B)$
@@ -144,7 +144,7 @@ C_compl_B_compl_A
 
 ```python
 C_inters_A_union_C_min_B= None
-C_inters_A_union_C_min_B
+C_inters_A_union_C_min_B # {2, 6, 8, 9}
 ```
 
 ## The Inclusion Exclusion Principle
@@ -171,13 +171,13 @@ What you'll do is translate the left hand side of the equation for the inclusion
 
 ```python
 left_hand_eq = None
-print(left_hand_eq)  # 9
+print(left_hand_eq)  # 9 elements in the set
 ```
 
 
 ```python
 right_hand_eq = None
-print(right_hand_eq) # 9
+print(right_hand_eq) # 9 elements in the set
 ```
 
 
