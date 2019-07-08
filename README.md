@@ -41,7 +41,7 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 - $C \backslash (B \backslash A)$ 
 - $(C \cap A) \cup (C \backslash B)$
         
-#### c. As seen in the lecture, you can easily create sets in Python as well. For the remainder of this exercise, let's create sets A, B and C and universal set U in Python and test out the results you came up with.
+#### c. For the remainder of this exercise, let's  create sets A, B and C and universal set U in Python and test out the results you came up with. Sets are easy to create in Python. For a guide to the syntax, follow some of the documentation [here](https://www.w3schools.com/python/python_sets.asp)
 
 
 ```python
