@@ -53,9 +53,25 @@ A = None
 
 
 ```python
+# __SOLUTION__ 
+# Create set A
+A = set([2,4,6,8,10])
+'Type A: {}, A: {}'.format(type(A), A)
+```
+
+
+```python
 # Create set B
 B = None
 'Type B: {}, B: {}'.format(type(B), B) # "Type B: <class 'set'>, B: {8, 11, 3, 12}"
+```
+
+
+```python
+# __SOLUTION__ 
+# Create set B
+B = set([3,8,11,12])
+'Type B: {}, B: {}'.format(type(B), B)
 ```
 
 
@@ -67,9 +83,25 @@ C = None
 
 
 ```python
+# __SOLUTION__ 
+# Create set C
+C = set([2,3,6,8,9,11])
+'Type C: {}, C: {}'.format(type(C), C)
+```
+
+
+```python
 # Create universal set U
 U = None
 'Type U: {}, U: {}'.format(type(U), U) # "Type U: <class 'set'>, U: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}"
+```
+
+
+```python
+# __SOLUTION__ 
+# Create universal set U
+U = set([1,2,3,4,5,6,7,8,9,10,11,12])
+'Type U: {}, U: {}'.format(type(U), U)
 ```
 
 Now, verify your answers in section 1 by using the correct methods in Python. To provide a little bit of help, you can find a table with common operations on sets below.
@@ -91,12 +123,26 @@ A_inters_B =  None
 A_inters_B # {8}
 ```
 
+
+```python
+# __SOLUTION__ 
+A_inters_B =  A & B
+A_inters_B
+```
+
 #### 2. $ A \cup C $
 
 
 ```python
 A_union_C = None
 A_union_C # {2, 3, 4, 6, 8, 9, 10, 11}
+```
+
+
+```python
+# __SOLUTION__ 
+A_union_C = A | C
+A_union_C
 ```
 
 #### 3.  $A^c$ (you'll have to be a little creative here!)
@@ -107,12 +153,26 @@ A_comp = None
 A_comp # {1, 3, 5, 7, 9, 11, 12}
 ```
 
+
+```python
+# __SOLUTION__ 
+A_comp = U.difference(A) # or A_comp = U-A
+A_comp
+```
+
 #### 4.  $(A \cup B)^c $
 
 
 ```python
 A_union_B_comp = None
 A_union_B_comp # {1, 5, 7, 9}
+```
+
+
+```python
+# __SOLUTION__ 
+A_union_B_comp = U - (A | B) 
+A_union_B_comp
 ```
 
 #### 5. $B \cap C' $
@@ -123,12 +183,26 @@ B_inters_C_comp = None
 B_inters_C_comp # {12}
 ```
 
+
+```python
+# __SOLUTION__ 
+B_inters_C_comp = B & (U-C)
+B_inters_C_comp
+```
+
 #### 6. $A\backslash B$
 
 
 ```python
 compl_of_B = None
 compl_of_B # {2, 4, 6, 10}
+```
+
+
+```python
+# __SOLUTION__ 
+compl_of_B = A-B
+compl_of_B
 ```
 
 #### 7. $C \backslash (B \backslash A) $
@@ -139,12 +213,26 @@ C_compl_B_compl_A = None
 C_compl_B_compl_A # {2, 6, 8, 9}
 ```
 
+
+```python
+# __SOLUTION__ 
+C_compl_B_compl_A= C-(B-A)
+C_compl_B_comp_A
+```
+
 #### 8.  $(C \cap A) \cup (C \backslash B)$
 
 
 ```python
 C_inters_A_union_C_min_B= None
 C_inters_A_union_C_min_B # {2, 6, 8, 9}
+```
+
+
+```python
+# __SOLUTION__ 
+C_inters_A_union_C_min_B= (C&A)|(C-B)
+C_inters_A_union_C_min_B
 ```
 
 ## The Inclusion Exclusion Principle
@@ -191,12 +279,32 @@ Mary is preparing for a road trip from her hometown, Boston, to Chicago. She has
 
 
 ```python
+# __SOLUTION__ 
+left_hand_eq = len(A | B | C)
+print(left_hand_eq)  # 9
+```
+
+
+```python
 Nina = set(["Cat","Dog","Rabbit","Donkey","Parrot", "Goldfish"])
 Mary = set(["Dog","Chinchilla","Horse", "Chicken"])
 Eve = set(["Rabbit", "Turtle", "Goldfish"])
 ```
 
+
+```python
+# __SOLUTION__ 
+right_hand_eq = len(A)+len(B)+len(C)- len(A&B)-len(A&C)-len(B&C)+len(A&B&C)
+print(right_hand_eq) # 9
+```
+
 In this exercise, you'll be able to use the following operations:
+
+
+```python
+# __SOLUTION__ 
+left_hand_eq == right_hand_eq # needs to say "True"
+```
 
 |Operation                          |	Equivalent |	Result|
 | ------                            | ------       | ------   |
@@ -218,6 +326,14 @@ None
 Eve # should be {'Rabbit', 'Goldfish'}
 ```
 
+
+```python
+# __SOLUTION__ 
+Nina = set(["Cat","Dog","Rabbit","Donkey","Parrot", "Goldfish"])
+Mary = set(["Dog","Chinchilla","Horse", "Chicken"])
+Eve = set(["Rabbit", "Turtle", "Goldfish"])
+```
+
 This time around, Nina promised to take care of Mary's pets while she's awat. but also wants to make sure her pets are well taken care of. As Nina is already spending a considerable amount of time taking care of her own pets, adding a few more won't make that much of a difference. Nina does want to update her list while Marie is away. 
 
 
@@ -234,6 +350,13 @@ None
 Mary  # set()
 ```
 
+
+```python
+# __SOLUTION__ 
+Eve.remove("Turtle")
+Eve # should be {'Rabbit', 'Goldfish'}
+```
+
 Look at how many species Nina is taking care of right now.
 
 
@@ -242,12 +365,26 @@ None
 n_species_Nina # 9
 ```
 
+
+```python
+# __SOLUTION__ 
+Nina.update(Mary)
+Nina # {'Chicken', 'Horse', 'Chinchilla', 'Parrot', 'Rabbit', 'Donkey', 'Dog', 'Cat', 'Goldfish'}
+```
+
 Taking care of this many pets is weighing heavy on Nina. She remembered Eve had a smaller collection of pets lately, and that's why she asks Eve to take care of the common species. This way, the extra pets are not a huge effort on Eve's behalf. Let's update Nina's pet collection.
 
 
 ```python
 None
 Nina # 7
+```
+
+
+```python
+# __SOLUTION__ 
+Mary.clear()
+Mary  # set()
 ```
 
 Taking care of 7 species seems doable for Nina!
@@ -274,6 +411,13 @@ e. Write down the interpretation and give all possible outcomes for the sets den
  - II. $C \cap D$, 
  - III. $C \cup D$. 
 
+
+```python
+# __SOLUTION__ 
+n_species_Nina = len(Nina)
+n_species_Nina # 9
+```
+
 ## Optional Exercise: European Countries
 
 Use set operations to determine which European countries are not in the European Union. You just might have to clean the data first with pandas.
@@ -291,6 +435,13 @@ eu = pd.read_excel('Europe_and_EU.xlsx', sheet_name = 'EU')
 
 
 ```python
+# __SOLUTION__ 
+Nina.difference_update(Eve)
+Nina # 7
+```
+
+
+```python
 europe.head(3) #preview dataframe
 eu.head(3)
 ```
@@ -303,3 +454,41 @@ eu.head(3)
 ## Summary
 
 In this lab, you practiced your knowledge on sets, such as common set operations, the use of Venn Diagrams, the inclusion exclusion principle, and how to use sets in Python! 
+
+
+```python
+# __SOLUTION__ 
+import pandas as pd
+
+#Load Europe and EU
+europe = pd.read_excel('Europe_and_EU.xlsx', sheet_name = 'Europe') 
+eu = pd.read_excel('Europe_and_EU.xlsx', sheet_name = 'EU')
+
+#Remove any whitespace from names
+europe.Country = europe.Country.map(lambda x: x.strip()) 
+eu.Country = eu.Country.map(lambda x: x.strip()) #Remove any whitespace from names
+```
+
+
+```python
+# __SOLUTION__ 
+europe.head(3) #preview dataframe
+```
+
+
+```python
+# __SOLUTION__ 
+eu.head(3)
+```
+
+
+```python
+# __SOLUTION__ 
+set(eu.Country) < set(europe.Country)
+```
+
+
+```python
+# __SOLUTION__ 
+set(europe.Country) - set(eu.Country)
+```
