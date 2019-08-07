@@ -453,6 +453,7 @@ e. Write down the interpretation and give all possible outcomes for the sets den
 
 
 ```python
+# __SOLUTION__
 # a. Solution: $A = {(L,L,L); (S,S,S); (R,R,R)}$
 
 # b. Solution: $B = {(L,R,S); (L,S,R); (R,L,S); (R,S,L); (S,L,R); (S,R,L)}$
