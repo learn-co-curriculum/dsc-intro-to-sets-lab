@@ -15,7 +15,8 @@ You will be able to:
 - Know how to perform common set operations in Python 
 - Learn how to use Venn Diagrams to understand about the relationships between sets
 
-## Exploring set operations using a Venn Diagram
+
+## Exploring Set Operations Using a Venn Diagram
 
 Let's start with a pretty conceptual example. Let's consider the following sets:
 
@@ -27,7 +28,15 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 
 #### a. Illustrate all the sets in a Venn Diagram like the one below. The rectangular shape represents the universal set.
 
-<img src="./images/new_venn_diagr.png" width="400">
+<img src="./images/Venn_diagr.png" width="600">
+
+
+
+```python
+
+# You can find the solution here:
+# https://github.com/learn-co-curriculum/dsc-intro-to-sets-lab/blob/master/images/Venn_diagr_solution.png
+```
 
 #### b. Using your Venn Diagram, list the elements in each of the following sets:
 
@@ -40,6 +49,22 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 - $A\backslash B$
 - $C \backslash (B \backslash A)$ 
 - $(C \cap A) \cup (C \backslash B)$
+
+
+```python
+
+# $ A \cap B = {8}$
+# $ A \cup C = {2,3,4,6,8,9,10, 11}$
+# $A^c = {1,3,5,8,7,9,11,12}$
+# $(A \cup B)^c = {1,5,7,9} $
+# $B \cap C' = {12}$
+# $A\backslash B = {2,4,6,10}$
+# $C \backslash (B \backslash A) ={2,6,8,9} $
+# $(C \cap A) \cup (C \backslash B) = {2,6,8,9}$
+```
+
+
+        
         
 #### c. For the remainder of this exercise, let's  create sets A, B and C and universal set U in Python and test out the results you came up with. Sets are easy to create in Python. For a guide to the syntax, follow some of the documentation [here](https://www.w3schools.com/python/python_sets.asp)
 
@@ -146,24 +171,6 @@ C_inters_A_union_C_min_B= (C&A)|(C-B)
 C_inters_A_union_C_min_B
 ```
 
-## Exploring set operations using a Venn Diagram: solution for parts a. and b. 
-
-a. 
-
-![](images/venn_diagr_compl.png)
-
-b. 
-
-- $ A \cap B = \{8\}$
-- $ A \cup C = \{2,3,4,6,8,9,10, 11\}$
-- $A^c = \{1,3,5,8,7,9,11,12\}$
-- $(A \cup B)^c = \{1,5,7,9\} $
-- $B \cap C' = \{12\}$
-- $A\backslash B = \{2,4,6,10\}$
-- $C \backslash (B \backslash A) =\{2,6,8,9\} $
-- $(C \cap A) \cup (C \backslash B) = \{2,6,8,9\}$
-
-
 ## The Inclusion Exclusion Principle
 
 Use A, B and C from exercise one to verify the inclusion exclusion principle in Python. 
@@ -183,6 +190,7 @@ combining these main commands:
 along with the `len(x)` function to get to the cardinality of a given x ("|x|").
 
 What you'll do is translate the left hand side of the equation for the inclusion principle in the object `left_hand_eq`, and the right hand side in the object `right_hand_eq` and see if the results are the same.
+
 
 
 ```python
@@ -266,16 +274,15 @@ Nina.difference_update(Eve)
 Nina # 7
 ```
 
-Taking care of 7 species seems doable for Nina!
+Taking care of 7 species is something Nina feels comfortable doing!
 
 ## Writing Down the Elements in a Set
 
 
 Mary dropped off her Pet's at Nina's house, and finally made her way to the highway. Awesome, her vacation has begun!
-She's approaching an exit. At the end of this particular highway exit, cars can either turn left (L), go straight (S) or turn right (R). It's pretty busy and there are two cars driving close to her. What we'll do now is create several sets. You won't be using Python here, it's sufficient to write the sets down on paper. A good notion of sets and subsets will help you calculate probabilities in the next lab!
+She's approaching an exit. At the end of this particular highway exit, cars can either turn left (L), go straight (S) or turn right (R). It's pretty busy and there are two cars driving close to her. What you'll do now is create several sets. You won't be using Python here, it's sufficient to write the sets down on paper. A good notion of sets and subsets will help you calculate probabilities in the next lab!
 
 Note: each set of action is what _all three cars_ are doing at any given time
-
 
 a. Create a set $A$ of all possible outcomes assuming that all three cars drive in the same direction.
            
@@ -290,33 +297,6 @@ e. Write down the interpretation and give all possible outcomes for the sets den
  - I. $D'$ 
  - II. $C \cap D$, 
  - III. $C \cup D$. 
-
-## Writing down the elements in a set: solution
-
-a. Solution: $A = \{(L,L,L); (S,S,S); (R,R,R)\}$
-
-b. Solution: $B = \{(L,R,S); (L,S,R); (R,L,S); (R,S,L); (S,L,R); (S,R,L)\}$
-
-
-
-c. Solution: $C= \{(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S)\}$
-
-
-d. Solution: $D = \{(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S);\\
-                          (L,S,S); (S,L,S); (S,S,L); (R,S,S); (S,R,S); (S,S,R); \\
-                          (S,L,L); (L,S,L); (L,L,S); (R,L,L); (L,R,L); (L,L,R)\}$
-
-e. 
-
-I. $D'$: all cars go in a different direction, or all go in the same direction.
-    $D' = \{(L,R,S); (L,S,R); (R,L,S); (R,S,L); (S,L,R); (S,R,L); (L,L,L); (S,S,S); (R,R,R)\}$
-             
-II. The intersection between 2 cars go right, and 2 cars go in the same direction. As C is a subset of D, this boils down to C again, so $C \cap D = C = \{(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S)\} $
-                  
-III. The union between 2 cars go right, and 2 cars go in the same direction. So the set we end up with is the set of 2 cars going in the same direction, which boils down to D again.
-$C \cup D = D = \{(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S);\\
-                 (L,S,S); (S,L,S); (S,S,L); (R,S,S); (S,R,S); (S,S,R);\\
-                 (S,L,L); (L,S,L); (L,L,S); (R,L,L); (L,R,L); (L,L,R)\}$
 
 ## Optional Exercise: European Countries
 
@@ -357,5 +337,4 @@ set(europe.Country) - set(eu.Country)
 
 ## Summary
 
-
-In this lab, you practiced your knowledge on sets, such as common set operations, the use of Venn Diagrams, the inclusion exclusion principle, and how to use sets in Python!
+In this lab, you practiced your knowledge on sets, such as common set operations, the use of Venn Diagrams, the inclusion exclusion principle, and how to use sets in Python! 
