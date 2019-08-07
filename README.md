@@ -28,7 +28,16 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 
 #### a. Illustrate all the sets in a Venn Diagram like the one below. The rectangular shape represents the universal set.
 
-<img src="./images/new_venn_diagr.png" width="400">
+<img src="./images/Venn_diagr.png" width="600">
+
+
+
+```python
+# __SOLUTION__
+
+# You can find the solution here:
+# https://github.com/learn-co-curriculum/dsc-intro-to-sets-lab/blob/master/images/Venn_diagr_solution.png
+```
 
 #### b. Using your Venn Diagram, list the elements in each of the following sets:
 
@@ -41,6 +50,23 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 - $A\backslash B$
 - $C \backslash (B \backslash A)$ 
 - $(C \cap A) \cup (C \backslash B)$
+
+
+```python
+# __SOLUTION__
+
+# $ A \cap B = {8}$
+# $ A \cup C = {2,3,4,6,8,9,10, 11}$
+# $A^c = {1,3,5,8,7,9,11,12}$
+# $(A \cup B)^c = {1,5,7,9} $
+# $B \cap C' = {12}$
+# $A\backslash B = {2,4,6,10}$
+# $C \backslash (B \backslash A) ={2,6,8,9} $
+# $(C \cap A) \cup (C \backslash B) = {2,6,8,9}$
+```
+
+
+        
         
 #### c. For the remainder of this exercise, let's  create sets A, B and C and universal set U in Python and test out the results you came up with. Sets are easy to create in Python. For a guide to the syntax, follow some of the documentation [here](https://www.w3schools.com/python/python_sets.asp)
 
@@ -264,8 +290,22 @@ print(left_hand_eq)  # 9 elements in the set
 
 
 ```python
+# __SOLUTION__ 
+left_hand_eq = len(A | B | C)
+print(left_hand_eq)  # 9
+```
+
+
+```python
 right_hand_eq = None
 print(right_hand_eq) # 9 elements in the set
+```
+
+
+```python
+# __SOLUTION__ 
+right_hand_eq = len(A)+len(B)+len(C)- len(A&B)-len(A&C)-len(B&C)+len(A&B&C)
+print(right_hand_eq) # 9
 ```
 
 
@@ -273,16 +313,15 @@ print(right_hand_eq) # 9 elements in the set
 None # Use a comparison operator to compare `left_hand_eq` and `right_hand_eq`. Needs to say "True".
 ```
 
-## Set Operations in Python
-
-Mary is preparing for a road trip from her hometown, Boston, to Chicago. She has quite a few pets, yet luckily, so do her friends. They try to make sure that they take care of each other's pets while someone is away on a trip. A month ago, each respective person's pet collection was given by the following three sets:
-
 
 ```python
 # __SOLUTION__ 
-left_hand_eq = len(A | B | C)
-print(left_hand_eq)  # 9
+left_hand_eq == right_hand_eq # needs to say "True"
 ```
+
+## Set Operations in Python
+
+Mary is preparing for a road trip from her hometown, Boston, to Chicago. She has quite a few pets, yet luckily, so do her friends. They try to make sure that they take care of each other's pets while someone is away on a trip. A month ago, each respective person's pet collection was given by the following three sets:
 
 
 ```python
@@ -294,17 +333,12 @@ Eve = set(["Rabbit", "Turtle", "Goldfish"])
 
 ```python
 # __SOLUTION__ 
-right_hand_eq = len(A)+len(B)+len(C)- len(A&B)-len(A&C)-len(B&C)+len(A&B&C)
-print(right_hand_eq) # 9
+Nina = set(["Cat","Dog","Rabbit","Donkey","Parrot", "Goldfish"])
+Mary = set(["Dog","Chinchilla","Horse", "Chicken"])
+Eve = set(["Rabbit", "Turtle", "Goldfish"])
 ```
 
 In this exercise, you'll be able to use the following operations:
-
-
-```python
-# __SOLUTION__ 
-left_hand_eq == right_hand_eq # needs to say "True"
-```
 
 |Operation                          |	Equivalent |	Result|
 | ------                            | ------       | ------   |
@@ -329,9 +363,8 @@ Eve # should be {'Rabbit', 'Goldfish'}
 
 ```python
 # __SOLUTION__ 
-Nina = set(["Cat","Dog","Rabbit","Donkey","Parrot", "Goldfish"])
-Mary = set(["Dog","Chinchilla","Horse", "Chicken"])
-Eve = set(["Rabbit", "Turtle", "Goldfish"])
+Eve.remove("Turtle")
+Eve # should be {'Rabbit', 'Goldfish'}
 ```
 
 This time around, Nina promised to take care of Mary's pets while she's awat. but also wants to make sure her pets are well taken care of. As Nina is already spending a considerable amount of time taking care of her own pets, adding a few more won't make that much of a difference. Nina does want to update her list while Marie is away. 
@@ -339,6 +372,13 @@ This time around, Nina promised to take care of Mary's pets while she's awat. bu
 
 ```python
 None
+Nina # {'Chicken', 'Horse', 'Chinchilla', 'Parrot', 'Rabbit', 'Donkey', 'Dog', 'Cat', 'Goldfish'}
+```
+
+
+```python
+# __SOLUTION__ 
+Nina.update(Mary)
 Nina # {'Chicken', 'Horse', 'Chinchilla', 'Parrot', 'Rabbit', 'Donkey', 'Dog', 'Cat', 'Goldfish'}
 ```
 
@@ -353,8 +393,8 @@ Mary  # set()
 
 ```python
 # __SOLUTION__ 
-Eve.remove("Turtle")
-Eve # should be {'Rabbit', 'Goldfish'}
+Mary.clear()
+Mary  # set()
 ```
 
 Look at how many species Nina is taking care of right now.
@@ -368,8 +408,8 @@ n_species_Nina # 9
 
 ```python
 # __SOLUTION__ 
-Nina.update(Mary)
-Nina # {'Chicken', 'Horse', 'Chinchilla', 'Parrot', 'Rabbit', 'Donkey', 'Dog', 'Cat', 'Goldfish'}
+n_species_Nina = len(Nina)
+n_species_Nina # 9
 ```
 
 Taking care of this many pets is weighing heavy on Nina. She remembered Eve had a smaller collection of pets lately, and that's why she asks Eve to take care of the common species. This way, the extra pets are not a huge effort on Eve's behalf. Let's update Nina's pet collection.
@@ -383,11 +423,11 @@ Nina # 7
 
 ```python
 # __SOLUTION__ 
-Mary.clear()
-Mary  # set()
+Nina.difference_update(Eve)
+Nina # 7
 ```
 
-Taking care of 7 species seems doable for Nina!
+Taking care of 7 species is something Nina feels comfortable doing!
 
 ## Writing Down the Elements in a Set
 
@@ -413,9 +453,30 @@ e. Write down the interpretation and give all possible outcomes for the sets den
 
 
 ```python
-# __SOLUTION__ 
-n_species_Nina = len(Nina)
-n_species_Nina # 9
+# a. Solution: $A = {(L,L,L); (S,S,S); (R,R,R)}$
+
+# b. Solution: $B = {(L,R,S); (L,S,R); (R,L,S); (R,S,L); (S,L,R); (S,R,L)}$
+
+# c. Solution: $C= {(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S)}$
+
+# d. Solution: $D = {(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S);\ 
+ #(L,S,S); (S,L,S); (S,S,L); (R,S,S); (S,R,S); (S,S,R); \ (S,L,L); (L,S,L);
+ #(L,L,S); (R,L,L); (L,R,L); (L,L,R)}$
+
+#e.
+
+# I. $D'$: all cars go in a different direction, or all go in the same direction. 
+# $D' = {(L,R,S); (L,S,R); (R,L,S); (R,S,L); (S,L,R); (S,R,L); (L,L,L); (S,S,S); (R,R,R)}$
+
+# II. The intersection between 2 cars go right, and 2 cars go in the same direction. 
+# As C is a subset of D, this boils down to C again, 
+# so $C \cap D = C = {(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S)} $
+
+# III. The union between 2 cars go right, and 2 cars go in the same direction. 
+# So the set we end up with is the set of 2 cars going in the same direction, 
+# which boils down to D again. $C \cup D = D = {(L,R,R); (R,L,R); (R,R,L); (S,R,R); 
+# (R,S,R); (R,R,S);\ (L,S,S); (S,L,S); (S,S,L); (R,S,S); (S,R,S); (S,S,R);\ (S,L,L); 
+# (L,S,L); (L,L,S); (R,L,L); (L,R,L); (L,L,R)}$
 ```
 
 ## Optional Exercise: European Countries
@@ -435,13 +496,6 @@ eu = pd.read_excel('Europe_and_EU.xlsx', sheet_name = 'EU')
 
 
 ```python
-# __SOLUTION__ 
-Nina.difference_update(Eve)
-Nina # 7
-```
-
-
-```python
 europe.head(3) #preview dataframe
 eu.head(3)
 ```
@@ -450,10 +504,6 @@ eu.head(3)
 ```python
 # Your code comes here
 ```
-
-## Summary
-
-In this lab, you practiced your knowledge on sets, such as common set operations, the use of Venn Diagrams, the inclusion exclusion principle, and how to use sets in Python! 
 
 
 ```python
@@ -492,3 +542,7 @@ set(eu.Country) < set(europe.Country)
 # __SOLUTION__ 
 set(europe.Country) - set(eu.Country)
 ```
+
+## Summary
+
+In this lab, you practiced your knowledge on sets, such as common set operations, the use of Venn Diagrams, the inclusion exclusion principle, and how to use sets in Python! 
