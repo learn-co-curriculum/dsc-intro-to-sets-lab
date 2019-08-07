@@ -278,34 +278,6 @@ e. Write down the interpretation and give all possible outcomes for the sets den
  - II. $C \cap D$, 
  - III. $C \cup D$. 
 
-
-```python
-# a. Solution: $A = {(L,L,L); (S,S,S); (R,R,R)}$
-
-# b. Solution: $B = {(L,R,S); (L,S,R); (R,L,S); (R,S,L); (S,L,R); (S,R,L)}$
-
-# c. Solution: $C= {(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S)}$
-
-# d. Solution: $D = {(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S);\ 
- #(L,S,S); (S,L,S); (S,S,L); (R,S,S); (S,R,S); (S,S,R); \ (S,L,L); (L,S,L);
- #(L,L,S); (R,L,L); (L,R,L); (L,L,R)}$
-
-#e.
-
-# I. $D'$: all cars go in a different direction, or all go in the same direction. 
-# $D' = {(L,R,S); (L,S,R); (R,L,S); (R,S,L); (S,L,R); (S,R,L); (L,L,L); (S,S,S); (R,R,R)}$
-
-# II. The intersection between 2 cars go right, and 2 cars go in the same direction. 
-# As C is a subset of D, this boils down to C again, 
-# so $C \cap D = C = {(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S)} $
-
-# III. The union between 2 cars go right, and 2 cars go in the same direction. 
-# So the set we end up with is the set of 2 cars going in the same direction, 
-# which boils down to D again. $C \cup D = D = {(L,R,R); (R,L,R); (R,R,L); (S,R,R); 
-# (R,S,R); (R,R,S);\ (L,S,S); (S,L,S); (S,S,L); (R,S,S); (S,R,S); (S,S,R);\ (S,L,L); 
-# (L,S,L); (L,L,S); (R,L,L); (L,R,L); (L,L,R)}$
-```
-
 ## Optional Exercise: European Countries
 
 Use set operations to determine which European countries are not in the European Union. You just might have to clean the data first with pandas.
