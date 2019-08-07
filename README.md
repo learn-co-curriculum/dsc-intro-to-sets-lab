@@ -28,7 +28,8 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 
 #### a. Illustrate all the sets in a Venn Diagram like the one below. The rectangular shape represents the universal set.
 
-<img src="./images/new_venn_diagr.png" width="400">
+<img src="./images/Venn_diagr.png" width="600">
+
 
 #### b. Using your Venn Diagram, list the elements in each of the following sets:
 
@@ -41,6 +42,9 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 - $A\backslash B$
 - $C \backslash (B \backslash A)$ 
 - $(C \cap A) \cup (C \backslash B)$
+
+
+        
         
 #### c. For the remainder of this exercise, let's  create sets A, B and C and universal set U in Python and test out the results you came up with. Sets are easy to create in Python. For a guide to the syntax, follow some of the documentation [here](https://www.w3schools.com/python/python_sets.asp)
 
@@ -250,7 +254,7 @@ None
 Nina # 7
 ```
 
-Taking care of 7 species seems doable for Nina!
+Taking care of 7 species is something Nina feels comfortable doing!
 
 ## Writing Down the Elements in a Set
 
@@ -273,6 +277,34 @@ e. Write down the interpretation and give all possible outcomes for the sets den
  - I. $D'$ 
  - II. $C \cap D$, 
  - III. $C \cup D$. 
+
+
+```python
+# a. Solution: $A = {(L,L,L); (S,S,S); (R,R,R)}$
+
+# b. Solution: $B = {(L,R,S); (L,S,R); (R,L,S); (R,S,L); (S,L,R); (S,R,L)}$
+
+# c. Solution: $C= {(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S)}$
+
+# d. Solution: $D = {(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S);\ 
+ #(L,S,S); (S,L,S); (S,S,L); (R,S,S); (S,R,S); (S,S,R); \ (S,L,L); (L,S,L);
+ #(L,L,S); (R,L,L); (L,R,L); (L,L,R)}$
+
+#e.
+
+# I. $D'$: all cars go in a different direction, or all go in the same direction. 
+# $D' = {(L,R,S); (L,S,R); (R,L,S); (R,S,L); (S,L,R); (S,R,L); (L,L,L); (S,S,S); (R,R,R)}$
+
+# II. The intersection between 2 cars go right, and 2 cars go in the same direction. 
+# As C is a subset of D, this boils down to C again, 
+# so $C \cap D = C = {(L,R,R); (R,L,R); (R,R,L); (S,R,R); (R,S,R); (R,R,S)} $
+
+# III. The union between 2 cars go right, and 2 cars go in the same direction. 
+# So the set we end up with is the set of 2 cars going in the same direction, 
+# which boils down to D again. $C \cup D = D = {(L,R,R); (R,L,R); (R,R,L); (S,R,R); 
+# (R,S,R); (R,R,S);\ (L,S,S); (S,L,S); (S,S,L); (R,S,S); (S,R,S); (S,S,R);\ (S,L,L); 
+# (L,S,L); (L,L,S); (R,L,L); (L,R,L); (L,L,R)}$
+```
 
 ## Optional Exercise: European Countries
 
