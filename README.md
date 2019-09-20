@@ -243,7 +243,7 @@ C_compl_B_compl_A # {2, 6, 8, 9}
 ```python
 # __SOLUTION__ 
 C_compl_B_compl_A= C-(B-A)
-C_compl_B_comp_A
+C_compl_B_compl_A
 ```
 
 #### 8.  $(C \cap A) \cup (C \backslash B)$
