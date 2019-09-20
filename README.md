@@ -160,7 +160,7 @@ compl_of_B
 
 ```python
 C_compl_B_compl_A= C-(B-A)
-C_compl_B_comp_A
+C_compl_B_compl_A
 ```
 
 #### 8.  $(C \cap A) \cup (C \backslash B)$
