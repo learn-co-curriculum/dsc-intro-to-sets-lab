@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Probability theory is all around. A common example is in the game of poker or related card games, where players try to calculate the probability of winning a round given the cards they have in their hands. Also in the business context probabilities play an important role. Operating in an volatile economy, companies need to take uncertainty into account and this is exactly where probability theory plays a role.
+Probability theory is all around. A common example is in the game of poker or related card games, where players try to calculate the probability of winning a round given the cards they have in their hands. Also in the business context probabilities play an important role. Operating in a volatile economy, companies need to take uncertainty into account and this is exactly where probability theory plays a role.
 
 As mentioned in the lesson before, a good understanding of probability starts with understanding of sets and set operations. That's exactly what you'll learn in this lab!
 
@@ -13,7 +13,7 @@ You will be able to:
 
 - Have a better sense of what sets, universal sets, and subsets are
 - Know how to perform common set operations in Python 
-- Learn how to use Venn Diagrams to understand about the relationships between sets
+- Learn how to use Venn Diagrams to understand the relationships between sets
 
 
 ## Exploring Set Operations Using a Venn Diagram
@@ -180,7 +180,7 @@ Recall from the previous lessen that:
 
 $$\mid A \cup B\cup C\mid = \mid A \mid + \mid B \mid + \mid C \mid - \mid A \cap B \mid  -\mid A \cap C \mid - \mid B \cap C \mid  + \mid A \cap B \cap C \mid $$
 
-combining these main commands:
+Combining these main commands:
 
 | Method        |	Equivalent |	Result |
 | ------                    | ------       | ------    |
@@ -242,7 +242,7 @@ Eve.remove("Turtle")
 Eve # should be {'Rabbit', 'Goldfish'}
 ```
 
-This time around, Nina promised to take care of Mary's pets while she's awat. but also wants to make sure her pets are well taken care of. As Nina is already spending a considerable amount of time taking care of her own pets, adding a few more won't make that much of a difference. Nina does want to update her list while Marie is away. 
+This time around, Nina promised to take care of Mary's pets while she's away. But she also wants to make sure her pets are well taken care of. As Nina is already spending a considerable amount of time taking care of her own pets, adding a few more won't make that much of a difference. Nina does want to update her list while Marie is away. 
 
 
 ```python
@@ -266,7 +266,7 @@ n_species_Nina = len(Nina)
 n_species_Nina # 9
 ```
 
-Taking care of this many pets is weighing heavy on Nina. She remembered Eve had a smaller collection of pets lately, and that's why she asks Eve to take care of the common species. This way, the extra pets are not a huge effort on Eve's behalf. Let's update Nina's pet collection.
+Taking care of this many pets is weighing heavily on Nina. She remembered Eve had a smaller collection of pets lately, and that's why she asks Eve to take care of the common species. This way, the extra pets are not a huge effort on Eve's behalf. Let's update Nina's pet collection.
 
 
 ```python
@@ -279,7 +279,7 @@ Taking care of 7 species is something Nina feels comfortable doing!
 ## Writing Down the Elements in a Set
 
 
-Mary dropped off her Pet's at Nina's house, and finally made her way to the highway. Awesome, her vacation has begun!
+Mary dropped off her Pet's at Nina's house and finally made her way to the highway. Awesome, her vacation has begun!
 She's approaching an exit. At the end of this particular highway exit, cars can either turn left (L), go straight (S) or turn right (R). It's pretty busy and there are two cars driving close to her. What you'll do now is create several sets. You won't be using Python here, it's sufficient to write the sets down on paper. A good notion of sets and subsets will help you calculate probabilities in the next lab!
 
 Note: each set of action is what _all three cars_ are doing at any given time
