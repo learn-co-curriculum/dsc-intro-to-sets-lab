@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Probability theory is all around. A common example is in the game of poker or related card games, where players try to calculate the probability of winning a round given the cards they have in their hands. Also in the business context probabilities play an important role. Operating in a volatile economy, companies need to take uncertainty into account and this is exactly where probability theory plays a role.
+Probability theory is all around. A common example is in the game of poker or related card games, where players try to calculate the probability of winning a round given the cards they have in their hands. Also, in a business context, probabilities play an important role. Operating in a volatile economy, companies need to take uncertainty into account and this is exactly where probability theory plays a role.
 
 As mentioned in the lesson before, a good understanding of probability starts with understanding of sets and set operations. That's exactly what you'll learn in this lab!
 
@@ -11,9 +11,8 @@ As mentioned in the lesson before, a good understanding of probability starts wi
 
 You will be able to:
 
-- Have a better sense of what sets, universal sets, and subsets are
-- Know how to perform common set operations in Python 
-- Learn how to use Venn Diagrams to understand the relationships between sets
+* Use Python to perform set operations
+* Use Python to demonstrate the inclusion/exclusion principle
 
 
 ## Exploring Set Operations Using a Venn Diagram
@@ -176,7 +175,7 @@ C_inters_A_union_C_min_B
 Use A, B and C from exercise one to verify the inclusion exclusion principle in Python. 
 You can use the sets A, B and C as used in the previous exercise. 
 
-Recall from the previous lessen that:
+Recall from the previous lesson that:
 
 $$\mid A \cup B\cup C\mid = \mid A \mid + \mid B \mid + \mid C \mid - \mid A \cap B \mid  -\mid A \cap C \mid - \mid B \cap C \mid  + \mid A \cap B \cap C \mid $$
 
