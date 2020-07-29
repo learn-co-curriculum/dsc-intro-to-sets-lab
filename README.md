@@ -19,10 +19,10 @@ You will be able to:
 
 Let's start with a pretty conceptual example. Let's consider the following sets:
 
-   - $\Omega$ = positive integers between [1, 12]
-   - $A$= even numbers between [1, 10]
-   - $B = \{3,8,11,12\}$
-   - $C = \{2,3,6,8,9,11\}$
+   - <img src="https://render.githubusercontent.com/render/math?math=\Omega">= positive integers between [1, 12]
+   - <img src="https://render.githubusercontent.com/render/math?math=A">= even numbers between [1, 10]
+   - <img src="https://render.githubusercontent.com/render/math?math=B =\{3,8,11,12\}">
+   - <img src="https://render.githubusercontent.com/render/math?math=C =\{2,3,6,8,9,11\}">
     
 
 #### a. Illustrate all the sets in a Venn Diagram like the one below. The rectangular shape represents the universal set.
@@ -32,15 +32,15 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 
 #### b. Using your Venn Diagram, list the elements in each of the following sets:
 
-- $ A \cap B$
-- $ A \cup C$
-- $A^c$ 
+- <img src="https://render.githubusercontent.com/render/math?math=A \cap B">
+- <img src="https://render.githubusercontent.com/render/math?math=A \cup C">
+- <img src="https://render.githubusercontent.com/render/math?math=A^c">
 - The absolute complement of B
-- $(A \cup B)^c$
-- $B \cap C'$
-- $A\backslash B$
-- $C \backslash (B \backslash A)$ 
-- $(C \cap A) \cup (C \backslash B)$
+- <img src="https://render.githubusercontent.com/render/math?math=(A \cup B)^c">
+- <img src="https://render.githubusercontent.com/render/math?math=B \cap C'">
+- <img src="https://render.githubusercontent.com/render/math?math=A\backslash B">
+- <img src="https://render.githubusercontent.com/render/math?math=C\backslash (B\backslash A)">
+- <img src="https://render.githubusercontent.com/render/math?math=(C \cap A) \cup (C\backslash B)">
 
 
         
@@ -81,12 +81,12 @@ Now, verify your answers in section 1 by using the correct methods in Python. To
 | ------                    | ------       | ------    |
 | s.issubset(t)             |	s <= t     | test whether every element in s is in t
 | s.issuperset(t)           |	s >= t     | test whether every element in t is in s
-| s.union(t)                |	s $\mid$ t | new set with elements from both s and t
+| s.union(t)                |	s <img src="https://render.githubusercontent.com/render/math?math=\mid">t | new set with elements from both s and t
 | s.intersection(t)         |	s & t      | new set with elements common to s and t
 | s.difference(t)           |	s - t 	   | new set with elements in s but not in t
 | s.symmetric_difference(t) |	s ^ t      | new set with elements in either s or t but not both
 
-#### 1. $ A \cap B$
+#### 1. <img src="https://render.githubusercontent.com/render/math?math=A \cap B">
 
 
 ```python
@@ -94,7 +94,7 @@ A_inters_B =  None
 A_inters_B # {8}
 ```
 
-#### 2. $ A \cup C $
+#### 2. <img src="https://render.githubusercontent.com/render/math?math=A \cup C ">
 
 
 ```python
@@ -102,7 +102,7 @@ A_union_C = None
 A_union_C # {2, 3, 4, 6, 8, 9, 10, 11}
 ```
 
-#### 3.  $A^c$ (you'll have to be a little creative here!)
+#### 3.  <img src="https://render.githubusercontent.com/render/math?math=A^c">(you'll have to be a little creative here!)
 
 
 ```python
@@ -110,7 +110,7 @@ A_comp = None
 A_comp # {1, 3, 5, 7, 9, 11, 12}
 ```
 
-#### 4.  $(A \cup B)^c $
+#### 4.  <img src="https://render.githubusercontent.com/render/math?math=(A \cup B)^c ">
 
 
 ```python
@@ -118,7 +118,7 @@ A_union_B_comp = None
 A_union_B_comp # {1, 5, 7, 9}
 ```
 
-#### 5. $B \cap C' $
+#### 5. <img src="https://render.githubusercontent.com/render/math?math=B \cap C' ">
 
 
 ```python
@@ -126,7 +126,7 @@ B_inters_C_comp = None
 B_inters_C_comp # {12}
 ```
 
-#### 6. $A\backslash B$
+#### 6. <img src="https://render.githubusercontent.com/render/math?math=A\backslash B">
 
 
 ```python
@@ -134,7 +134,7 @@ compl_of_B = None
 compl_of_B # {2, 4, 6, 10}
 ```
 
-#### 7. $C \backslash (B \backslash A) $
+#### 7. <img src="https://render.githubusercontent.com/render/math?math=C\backslash (B\backslash A) ">
 
 
 ```python
@@ -142,7 +142,7 @@ C_compl_B_compl_A = None
 C_compl_B_compl_A # {2, 6, 8, 9}
 ```
 
-#### 8.  $(C \cap A) \cup (C \backslash B)$
+#### 8.  <img src="https://render.githubusercontent.com/render/math?math=(C \cap A) \cup (C\backslash B)">
 
 
 ```python
@@ -157,13 +157,13 @@ You can use the sets A, B and C as used in the previous exercise.
 
 Recall from the previous lesson that:
 
-$$\mid A \cup B\cup C\mid = \mid A \mid + \mid B \mid + \mid C \mid - \mid A \cap B \mid  -\mid A \cap C \mid - \mid B \cap C \mid  + \mid A \cap B \cap C \mid $$
+<img src="https://render.githubusercontent.com/render/math?math=">\mid A \cup B\cup C\mid = \mid A \mid + \mid B \mid + \mid C \mid - \mid A \cap B \mid  -\mid A \cap C \mid - \mid B \cap C \mid  + \mid A \cap B \cap C \mid <img src="https://render.githubusercontent.com/render/math?math=">
 
 Combining these main commands:
 
 | Method        |	Equivalent |	Result |
 | ------                    | ------       | ------    |
-| a.union(b)                |	A $\mid$ B | new set with elements from both a and b
+| a.union(b)                |	A <img src="https://render.githubusercontent.com/render/math?math=\mid">B | new set with elements from both a and b
 | a.intersection(b)         |	A & B      | new set with elements common to a and b
 
 along with the `len(x)` function to get to the cardinality of a given x ("|x|").
@@ -203,7 +203,7 @@ In this exercise, you'll be able to use the following operations:
 
 |Operation                          |	Equivalent |	Result|
 | ------                            | ------       | ------   |
-|s.update(t)                        | 	$s \mid t$ 	   |return set s with elements added from t|
+|s.update(t)                        | 	<img src="https://render.githubusercontent.com/render/math?math=s\mid t">	   |return set s with elements added from t|
 |s.intersection_update(t)           | 	s &= t     |	return set s keeping only elements also found in t|
 |s.difference_update(t)             |	s -= t 	   |return set s after removing elements found in t|
 |s.symmetric_difference_update(t)   |	s ^= t 	   |return set s with elements from s or t but not both|
@@ -263,19 +263,19 @@ She's approaching an exit. At the end of this particular highway exit, cars can 
 
 Note: each set of action is what _all three cars_ are doing at any given time
 
-a. Create a set $A$ of all possible outcomes assuming that all three cars drive in the same direction.
+a. Create a set <img src="https://render.githubusercontent.com/render/math?math=A">of all possible outcomes assuming that all three cars drive in the same direction.
            
-b. Create a set $B$ of all possible outcomes assuming that all three cars drive in a different direction.
+b. Create a set <img src="https://render.githubusercontent.com/render/math?math=B">of all possible outcomes assuming that all three cars drive in a different direction.
              
-c. Create a set $C$ of all possible outcomes assuming that exactly 2 cars turn right.
+c. Create a set <img src="https://render.githubusercontent.com/render/math?math=C">of all possible outcomes assuming that exactly 2 cars turn right.
             
-d. Create a set $D$ of all possible outcomes assuming that exactly 2 cars drive in the same direction.
+d. Create a set <img src="https://render.githubusercontent.com/render/math?math=D">of all possible outcomes assuming that exactly 2 cars drive in the same direction.
 
                           
 e. Write down the interpretation and give all possible outcomes for the sets denoted by:
- - I. $D'$ 
- - II. $C \cap D$, 
- - III. $C \cup D$. 
+ - I. <img src="https://render.githubusercontent.com/render/math?math=D'">
+ - II. <img src="https://render.githubusercontent.com/render/math?math=C \cap D">, 
+ - III. <img src="https://render.githubusercontent.com/render/math?math=C \cup D">. 
 
 ## Optional Exercise: European Countries
 
