@@ -1,4 +1,3 @@
-
 # Introduction to Sets - Lab
 
 ## Introduction
@@ -32,15 +31,81 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 
 #### b. Using your Venn Diagram, list the elements in each of the following sets:
 
-- $ A \cap B$
-- $ A \cup C$
-- $A^c$ 
-- The absolute complement of B
-- $(A \cup B)^c$
-- $B \cap C'$
-- $A\backslash B$
-- $C \backslash (B \backslash A)$ 
-- $(C \cap A) \cup (C \backslash B)$
+Do this work by hand (writing in the values of each set), then you will check your answers using Python code later!
+
+For example, if the question was just asking for the values of $B$, you would replace `None` with `{3, 8, 11, 12}` typed out.
+
+$ A \cap B$
+
+
+```python
+ans1 = None
+ans1
+```
+
+$ A \cup C$
+
+
+```python
+ans2 = None
+ans2
+```
+
+$A^c$
+
+
+```python
+ans3 = None
+ans3
+```
+
+The absolute complement of B
+
+
+```python
+ans4 = None
+ans4
+```
+
+$(A \cup B)^c$
+
+
+```python
+ans5 = None
+ans5
+```
+
+$B \cap C'$
+
+
+```python
+ans6 = None
+ans6
+```
+
+$A\backslash B$
+
+
+```python
+ans7 = None
+ans7
+```
+
+$C \backslash (B \backslash A)$ 
+
+
+```python
+ans8 = None
+ans8
+```
+
+$(C \cap A) \cup (C \backslash B)$
+
+
+```python
+ans9 = None
+ans9
+```
 
 
         
@@ -75,7 +140,9 @@ U = None
 'Type U: {}, U: {}'.format(type(U), U) # "Type U: <class 'set'>, U: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}"
 ```
 
-Now, verify your answers in section 1 by using the correct methods in Python. To provide a little bit of help, you can find a table with common operations on sets below.
+Now, verify your answers in section 1 by using the correct methods in Python. For example, if the question was just asking for the values of $B$, you would replace `None` with `B`.
+
+To provide a little bit of help, you can find a table with common operations on sets below.
 
 | Method        |	Equivalent |	Result |
 | ------                    | ------       | ------    |
@@ -86,12 +153,14 @@ Now, verify your answers in section 1 by using the correct methods in Python. To
 | s.difference(t)           |	s - t 	   | new set with elements in s but not in t
 | s.symmetric_difference(t) |	s ^ t      | new set with elements in either s or t but not both
 
+Every cell should display `True` if your original answer matches the answer you calculated with Python. If it displays `False`, that means either your original answer or your Python code is incorrect.
+
 #### 1. $ A \cap B$
 
 
 ```python
-A_inters_B =  None
-A_inters_B # {8}
+A_inters_B = None
+A_inters_B == ans1
 ```
 
 #### 2. $ A \cup C $
@@ -99,55 +168,63 @@ A_inters_B # {8}
 
 ```python
 A_union_C = None
-A_union_C # {2, 3, 4, 6, 8, 9, 10, 11}
+A_union_C == ans2
 ```
 
-#### 3.  $A^c$ (you'll have to be a little creative here!)
+#### 3.  $A^c$
 
 
 ```python
 A_comp = None
-A_comp # {1, 3, 5, 7, 9, 11, 12}
+A_comp == ans3
 ```
 
-#### 4.  $(A \cup B)^c $
+#### 4. The absolute complement of B
+
+
+```python
+B_comp = None
+B_comp == ans4
+```
+
+#### 5.  $(A \cup B)^c $
 
 
 ```python
 A_union_B_comp = None
-A_union_B_comp # {1, 5, 7, 9}
+A_union_B_comp == ans5
 ```
 
-#### 5. $B \cap C' $
+#### 6. $B \cap C' $
 
 
 ```python
 B_inters_C_comp = None
-B_inters_C_comp # {12}
+B_inters_C_comp == ans6
 ```
 
-#### 6. $A\backslash B$
+#### 7. $A\backslash B$
 
 
 ```python
 compl_of_B = None
-compl_of_B # {2, 4, 6, 10}
+compl_of_B == ans7
 ```
 
-#### 7. $C \backslash (B \backslash A) $
+#### 8. $C \backslash (B \backslash A) $
 
 
 ```python
 C_compl_B_compl_A = None
-C_compl_B_compl_A # {2, 6, 8, 9}
+C_compl_B_compl_A == ans8
 ```
 
-#### 8.  $(C \cap A) \cup (C \backslash B)$
+#### 9.  $(C \cap A) \cup (C \backslash B)$
 
 
 ```python
-C_inters_A_union_C_min_B= None
-C_inters_A_union_C_min_B # {2, 6, 8, 9}
+C_inters_A_union_C_min_B = None
+C_inters_A_union_C_min_B == ans9
 ```
 
 ## The Inclusion Exclusion Principle
@@ -203,7 +280,7 @@ In this exercise, you'll be able to use the following operations:
 
 |Operation                          |	Equivalent |	Result|
 | ------                            | ------       | ------   |
-|s.update(t)                        | 	$s \mid t$ 	   |return set s with elements added from t|
+|s.update(t)                        | 	$s \mid= t$ 	   |return set s with elements added from t|
 |s.intersection_update(t)           | 	s &= t     |	return set s keeping only elements also found in t|
 |s.difference_update(t)             |	s -= t 	   |return set s after removing elements found in t|
 |s.symmetric_difference_update(t)   |	s ^= t 	   |return set s with elements from s or t but not both|
@@ -221,7 +298,7 @@ None
 Eve # should be {'Rabbit', 'Goldfish'}
 ```
 
-This time around, Nina promised to take care of Mary's pets while she's away. But she also wants to make sure her pets are well taken care of. As Nina is already spending a considerable amount of time taking care of her own pets, adding a few more won't make that much of a difference. Nina does want to update her list while Marie is away. 
+This time around, Nina promised to take care of Mary's pets while she's away. But she also wants to make sure her pets are well taken care of. As Nina is already spending a considerable amount of time taking care of her own pets, adding a few more won't make that much of a difference. Nina does want to update her list while Mary is away. 
 
 
 ```python
@@ -241,7 +318,7 @@ Look at how many species Nina is taking care of right now.
 
 
 ```python
-None
+n_species_Nina = None
 n_species_Nina # 9
 ```
 
@@ -258,7 +335,7 @@ Taking care of 7 species is something Nina feels comfortable doing!
 ## Writing Down the Elements in a Set
 
 
-Mary dropped off her Pet's at Nina's house and finally made her way to the highway. Awesome, her vacation has begun!
+Mary dropped off her pets at Nina's house and finally made her way to the highway. Awesome, her vacation has begun!
 She's approaching an exit. At the end of this particular highway exit, cars can either turn left (L), go straight (S) or turn right (R). It's pretty busy and there are two cars driving close to her. What you'll do now is create several sets. You won't be using Python here, it's sufficient to write the sets down on paper. A good notion of sets and subsets will help you calculate probabilities in the next lab!
 
 Note: each set of action is what _all three cars_ are doing at any given time
@@ -279,28 +356,43 @@ e. Write down the interpretation and give all possible outcomes for the sets den
 
 ## Optional Exercise: European Countries
 
-Use set operations to determine which European countries are not in the European Union. You just might have to clean the data first with pandas.
+Use set operations to determine which European countries are not in the European Union. Use the `Country` column. You just might have to clean the data first with pandas.
+
+Note that this data is from 2018, so EU membership may have changed.
 
 
 ```python
 import pandas as pd
 
-#Load Europe and EU
+# Load Europe and EU
 europe = pd.read_excel('Europe_and_EU.xlsx', sheet_name = 'Europe') 
 eu = pd.read_excel('Europe_and_EU.xlsx', sheet_name = 'EU')
 
-#Use pandas to remove any whitespace from names
+# Your code here to remove any whitespace from names
+```
+
+Preview data:
+
+
+```python
+europe.head(3)
 ```
 
 
 ```python
-europe.head(3) #preview dataframe
 eu.head(3)
 ```
 
+Your code comes here:
+
 
 ```python
-# Your code comes here
+# Check to confirm that the EU countries are a subset of countries in Europe
+```
+
+
+```python
+# Find the set of countries that are in Europe but not the EU
 ```
 
 ## Summary
