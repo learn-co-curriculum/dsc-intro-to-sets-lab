@@ -31,6 +31,7 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 
 
 ```python
+
 # __SOLUTION__
 
 # You can find the solution here:
