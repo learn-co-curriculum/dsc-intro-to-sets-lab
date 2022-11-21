@@ -32,6 +32,7 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 
 ```python
 
+
 # You can find the solution here:
 # https://github.com/learn-co-curriculum/dsc-intro-to-sets-lab/blob/curriculum/images/Venn_diagr_solution.png
 ```
