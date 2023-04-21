@@ -31,7 +31,6 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 
 
 ```python
-
 # __SOLUTION__
 
 # You can find the solution here:
@@ -251,7 +250,7 @@ ans9
 ```python
 # Create set A
 A = None
-'Type A: {}, A: {}'.format(type(A), A) # "Type A: <class 'set'>, A: {2, 4, 6, 8, 10}"
+f'Type A: {type(A)}, A: {A}' # "Type A: <class 'set'>, A: {2, 4, 6, 8, 10}"
 ```
 
 
@@ -261,7 +260,7 @@ A = None
 A = {2,4,6,8,10}
 # Alternatively
 # A = set(range(2, 11, 2))
-'Type A: {}, A: {}'.format(type(A), A)
+f'Type A: {type(A)}, A: {A}'
 ```
 
 
@@ -275,7 +274,7 @@ A = {2,4,6,8,10}
 ```python
 # Create set B
 B = None
-'Type B: {}, B: {}'.format(type(B), B) # "Type B: <class 'set'>, B: {8, 11, 3, 12}"
+f'Type B: {type(B)}, B: {B}' # "Type B: <class 'set'>, B: {8, 11, 3, 12}"
 ```
 
 
@@ -283,13 +282,13 @@ B = None
 # __SOLUTION__ 
 # Create set B
 B = {3,8,11,12}
-'Type B: {}, B: {}'.format(type(B), B)
+f'Type B: {type(B)}, B: {B}'
 ```
 
 
 
 
-    "Type B: <class 'set'>, B: {8, 11, 3, 12}"
+    "Type B: <class 'set'>, B: {8, 3, 11, 12}"
 
 
 
@@ -297,7 +296,7 @@ B = {3,8,11,12}
 ```python
 # Create set C
 C = None
-'Type C: {}, C: {}'.format(type(C), C) # "Type C: <class 'set'>, C: {2, 3, 6, 8, 9, 11}"
+f'Type C: {type(C)}, C: {C}' # "Type C: <class 'set'>, C: {2, 3, 6, 8, 9, 11}"
 ```
 
 
@@ -305,7 +304,7 @@ C = None
 # __SOLUTION__ 
 # Create set C
 C = {2,3,6,8,9,11}
-'Type C: {}, C: {}'.format(type(C), C)
+f'Type C: {type(C)}, C: {C}'
 ```
 
 
@@ -319,7 +318,7 @@ C = {2,3,6,8,9,11}
 ```python
 # Create universal set U
 U = None
-'Type U: {}, U: {}'.format(type(U), U) # "Type U: <class 'set'>, U: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}"
+f'Type U: {type(U)}, U: {U}' # "Type U: <class 'set'>, U: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}"
 ```
 
 
@@ -329,7 +328,7 @@ U = None
 U = set([1,2,3,4,5,6,7,8,9,10,11,12])
 # Alternatively
 # U = set(range(1, 13))
-'Type U: {}, U: {}'.format(type(U), U)
+f'Type U: {type(U)}, U: {U}'
 ```
 
 
@@ -892,8 +891,8 @@ eu = pd.read_excel('Europe_and_EU.xlsx', sheet_name = 'EU')
 import pandas as pd
 
 # Load Europe and EU
-europe = pd.read_excel('Europe_and_EU.xlsx', sheet_name = 'Europe') 
-eu = pd.read_excel('Europe_and_EU.xlsx', sheet_name = 'EU')
+europe = pd.read_excel('Europe_and_EU.xlsx', sheet_name='Europe') 
+eu = pd.read_excel('Europe_and_EU.xlsx', sheet_name='EU')
 
 # Remove any whitespace from names
 europe.Country = europe.Country.str.strip()
