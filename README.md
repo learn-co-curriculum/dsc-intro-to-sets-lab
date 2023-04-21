@@ -31,8 +31,6 @@ Let's start with a pretty conceptual example. Let's consider the following sets:
 
 
 ```python
-
-
 # You can find the solution here:
 # https://github.com/learn-co-curriculum/dsc-intro-to-sets-lab/blob/curriculum/images/Venn_diagr_solution.png
 ```
@@ -58,6 +56,13 @@ ans1
 
 
 
+
+
+
+    {8}
+
+
+
 $ A \cup C$
 
 
@@ -66,13 +71,6 @@ ans2 = {2,3,4,6,8,9,10,11}
 ans2
 ```
 
-
-
-
-    {2, 3, 4, 6, 8, 9, 10, 11}
-
-
-
 $A^c$
 
 
@@ -80,13 +78,6 @@ $A^c$
 ans3 = {1,3,5,7,9,11,12}
 ans3
 ```
-
-
-
-
-    {1, 3, 5, 7, 9, 11, 12}
-
-
 
 The absolute complement of B
 
@@ -189,7 +180,7 @@ ans9
 A = {2,4,6,8,10}
 # Alternatively
 # A = set(range(2, 11, 2))
-'Type A: {}, A: {}'.format(type(A), A)
+f'Type A: {type(A)}, A: {A}'
 ```
 
 
@@ -203,13 +194,13 @@ A = {2,4,6,8,10}
 ```python
 # Create set B
 B = {3,8,11,12}
-'Type B: {}, B: {}'.format(type(B), B)
+f'Type B: {type(B)}, B: {B}'
 ```
 
 
 
 
-    "Type B: <class 'set'>, B: {8, 11, 3, 12}"
+    "Type B: <class 'set'>, B: {8, 3, 11, 12}"
 
 
 
@@ -217,7 +208,7 @@ B = {3,8,11,12}
 ```python
 # Create set C
 C = {2,3,6,8,9,11}
-'Type C: {}, C: {}'.format(type(C), C)
+f'Type C: {type(C)}, C: {C}'
 ```
 
 
@@ -233,13 +224,13 @@ C = {2,3,6,8,9,11}
 U = set([1,2,3,4,5,6,7,8,9,10,11,12])
 # Alternatively
 # U = set(range(1, 13))
-'Type U: {}, U: {}'.format(type(U), U)
+f'Type U: {type(U)}, A: {U}'
 ```
 
 
 
 
-    "Type U: <class 'set'>, U: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}"
+    "Type U: <class 'set'>, A: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}"
 
 
 
@@ -311,13 +302,6 @@ B_comp = U.difference(B)
 B_comp == ans4
 ```
 
-
-
-
-    True
-
-
-
 #### 5.  $(A \cup B)^c $
 
 
@@ -325,13 +309,6 @@ B_comp == ans4
 A_union_B_comp = U - (A | B) 
 A_union_B_comp == ans5
 ```
-
-
-
-
-    True
-
-
 
 #### 6. $B \cap C' $
 
@@ -341,13 +318,6 @@ B_inters_C_comp = B & (U-C)
 B_inters_C_comp == ans6
 ```
 
-
-
-
-    True
-
-
-
 #### 7. $A\backslash B$
 
 
@@ -355,13 +325,6 @@ B_inters_C_comp == ans6
 compl_of_B = A-B
 compl_of_B == ans7
 ```
-
-
-
-
-    True
-
-
 
 #### 8. $C \backslash (B \backslash A) $
 
@@ -371,13 +334,6 @@ C_compl_B_compl_A = C-(B-A)
 C_compl_B_compl_A == ans8
 ```
 
-
-
-
-    True
-
-
-
 #### 9.  $(C \cap A) \cup (C \backslash B)$
 
 
@@ -385,13 +341,6 @@ C_compl_B_compl_A == ans8
 C_inters_A_union_C_min_B = (C&A)|(C-B)
 C_inters_A_union_C_min_B == ans9
 ```
-
-
-
-
-    True
-
-
 
 ## The Inclusion Exclusion Principle
 
@@ -420,29 +369,16 @@ left_hand_eq = len(A | B | C)
 print(left_hand_eq)  # 9
 ```
 
-    9
-
-
 
 ```python
 right_hand_eq = len(A) + len(B) + len(C) - len(A&B) - len(A&C) - len(B&C) + len(A&B&C)
 print(right_hand_eq) # 9
 ```
 
-    9
-
-
 
 ```python
 left_hand_eq == right_hand_eq # needs to say "True"
 ```
-
-
-
-
-    True
-
-
 
 ## Set Operations in Python
 
@@ -477,13 +413,6 @@ Eve.remove("Turtle")
 Eve # should be {'Rabbit', 'Goldfish'}
 ```
 
-
-
-
-    {'Goldfish', 'Rabbit'}
-
-
-
 This time around, Nina promised to take care of Mary's pets while she's away. But she also wants to make sure her pets are well taken care of. As Nina is already spending a considerable amount of time taking care of her own pets, adding a few more won't make that much of a difference. Nina does want to update her list while Mary is away. 
 
 
@@ -491,21 +420,6 @@ This time around, Nina promised to take care of Mary's pets while she's away. Bu
 Nina.update(Mary)
 Nina # {'Chicken', 'Horse', 'Chinchilla', 'Parrot', 'Rabbit', 'Donkey', 'Dog', 'Cat', 'Goldfish'}
 ```
-
-
-
-
-    {'Cat',
-     'Chicken',
-     'Chinchilla',
-     'Dog',
-     'Donkey',
-     'Goldfish',
-     'Horse',
-     'Parrot',
-     'Rabbit'}
-
-
 
 Mary, on the other hand, wants to clear her list altogether while away:
 
@@ -515,13 +429,6 @@ Mary.clear()
 Mary  # set()
 ```
 
-
-
-
-    set()
-
-
-
 Look at how many species Nina is taking care of right now.
 
 
@@ -530,13 +437,6 @@ n_species_Nina = len(Nina)
 n_species_Nina # 9
 ```
 
-
-
-
-    9
-
-
-
 Taking care of this many pets is weighing heavily on Nina. She remembered Eve had a smaller collection of pets lately, and that's why she asks Eve to take care of the common species. This way, the extra pets are not a huge effort on Eve's behalf. Let's update Nina's pet collection.
 
 
@@ -544,13 +444,6 @@ Taking care of this many pets is weighing heavily on Nina. She remembered Eve ha
 Nina.difference_update(Eve)
 Nina # 7
 ```
-
-
-
-
-    {'Cat', 'Chicken', 'Chinchilla', 'Dog', 'Donkey', 'Horse', 'Parrot'}
-
-
 
 Taking care of 7 species is something Nina feels comfortable doing!
 
@@ -603,13 +496,6 @@ D_prime == A | B
 ```
 
 
-
-
-    True
-
-
-
-
 ```python
 # II. The intersection between 2 cars go right, and 2 cars go in the same direction.
 # Because 2 cars going right is a subset of 2 cars going the same direction (C is a
@@ -618,13 +504,6 @@ D_prime == A | B
 C_inters_D = C & D
 C_inters_D == C
 ```
-
-
-
-
-    True
-
-
 
 
 ```python
@@ -636,13 +515,6 @@ C_inters_D == C
 C_union_D = C | D
 C_union_D == D
 ```
-
-
-
-
-    True
-
-
 
 ## Optional Exercise: European Countries
 
@@ -671,167 +543,9 @@ europe.head(3)
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Rank</th>
-      <th>Country</th>
-      <th>Population</th>
-      <th>% of population</th>
-      <th>Average relative annual growth (%)</th>
-      <th>Average absolute annual growth</th>
-      <th>Estimated doubling time (Years)</th>
-      <th>Official figure (where available)</th>
-      <th>Date of last figure</th>
-      <th>Regional grouping</th>
-      <th>Source</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1.0</td>
-      <td>Russia</td>
-      <td>143964709</td>
-      <td>17.15</td>
-      <td>0.19</td>
-      <td>294285</td>
-      <td>368</td>
-      <td>146839993</td>
-      <td>2017-01-01 00:00:00</td>
-      <td>EAEU</td>
-      <td>[1]</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2.0</td>
-      <td>Germany</td>
-      <td>82521653</td>
-      <td>9.80</td>
-      <td>1.20</td>
-      <td>600000</td>
-      <td>90</td>
-      <td>82800000</td>
-      <td>2016-12-31 00:00:00</td>
-      <td>EU</td>
-      <td>Official estimate</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3.0</td>
-      <td>Turkey</td>
-      <td>80810000</td>
-      <td>9.60</td>
-      <td>1.34</td>
-      <td>1035000</td>
-      <td>52</td>
-      <td>77695904</td>
-      <td>2016-12-31 00:00:00</td>
-      <td>NaN</td>
-      <td>[2]</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
 ```python
 eu.head(3)
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Rank</th>
-      <th>Country</th>
-      <th>2017 population</th>
-      <th>% of pop.</th>
-      <th>Average relative annual growth</th>
-      <th>Average absolute annual growth</th>
-      <th>Official figure</th>
-      <th>Date of last figure</th>
-      <th>Source</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>Germany</td>
-      <td>82800000</td>
-      <td>16.18</td>
-      <td>0.76</td>
-      <td>628876</td>
-      <td>82576900</td>
-      <td>2017-03-31</td>
-      <td>Official estimate</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>France</td>
-      <td>67210459</td>
-      <td>13.10</td>
-      <td>0.40</td>
-      <td>265557</td>
-      <td>67174000</td>
-      <td>2018-01-01</td>
-      <td>Monthly official estimate</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>United Kingdom</td>
-      <td>65808573</td>
-      <td>12.86</td>
-      <td>0.65</td>
-      <td>428793</td>
-      <td>65648100</td>
-      <td>2017-06-30</td>
-      <td>Official estimate</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
 
 Your code comes here:
 
@@ -842,52 +556,10 @@ set(eu.Country) < set(europe.Country)
 ```
 
 
-
-
-    True
-
-
-
-
 ```python
 # Find the set of countries that are in Europe but not the EU
 set(europe.Country) - set(eu.Country)
 ```
-
-
-
-
-    {'Albania',
-     'Andorra',
-     'Armenia',
-     'Azerbaijan',
-     'Belarus',
-     'Bosnia and Herzegovina',
-     'Faroe Islands (Denmark)',
-     'Georgia',
-     'Gibraltar (UK)',
-     'Guernsey (UK)',
-     'Iceland',
-     'Isle of Man (UK)',
-     'Jersey (UK)',
-     'Kosovo',
-     'Liechtenstein',
-     'Macedonia',
-     'Moldova',
-     'Monaco',
-     'Montenegro',
-     'Norway',
-     'Russia',
-     'San Marino',
-     'Serbia',
-     'Svalbard (Norway)',
-     'Switzerland',
-     'Turkey',
-     'Ukraine',
-     'Vatican City',
-     'Åland Islands (Finland)'}
-
-
 
 ## Summary
 
