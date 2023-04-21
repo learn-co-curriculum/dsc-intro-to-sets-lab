@@ -116,28 +116,28 @@ ans9
 ```python
 # Create set A
 A = None
-'Type A: {}, A: {}'.format(type(A), A) # "Type A: <class 'set'>, A: {2, 4, 6, 8, 10}"
+f'Type A: {type(A)}, A: {A}' # "Type A: <class 'set'>, A: {2, 4, 6, 8, 10}"
 ```
 
 
 ```python
 # Create set B
 B = None
-'Type B: {}, B: {}'.format(type(B), B) # "Type B: <class 'set'>, B: {8, 11, 3, 12}"
+f'Type B: {type(B)}, A: {B}' # "Type B: <class 'set'>, B: {8, 11, 3, 12}"
 ```
 
 
 ```python
 # Create set C
 C = None
-'Type C: {}, C: {}'.format(type(C), C) # "Type C: <class 'set'>, C: {2, 3, 6, 8, 9, 11}"
+f'Type C: {type(C)}, A: {C}' # "Type C: <class 'set'>, C: {2, 3, 6, 8, 9, 11}"
 ```
 
 
 ```python
 # Create universal set U
 U = None
-'Type U: {}, U: {}'.format(type(U), U) # "Type U: <class 'set'>, U: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}"
+f'Type U: {type(U)}, A: {U}' # "Type U: <class 'set'>, U: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}"
 ```
 
 Now, verify your answers in section 1 by using the correct methods in Python. For example, if the question was just asking for the values of $B$, you would replace `None` with `B`.
